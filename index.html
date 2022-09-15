@@ -28,7 +28,7 @@
         >
     <ul class="list header-list ">
           <li class="list-item-list">
-            <a class="link current menu-link menu" href="студія">Студія</a>
+            <a class="link current menu-link" href="студія">Студія</a>
           </li>
           <li class="list-item-list">
             <a class="link menu-link" href="./portfolio.html">Портфоліо</a>
@@ -59,8 +59,22 @@
     <main>
       <section class="section-nav">
         <div class="container ">
-         <h1 class="main-title">Ефективні рішення для вашого бізнесу</h1>
-        <button class="btn" type="button">Замовити послугу</button>
+          <h1 class="main-title">Ефективні рішення для вашого бізнесу</h1>
+        <button data-modal-open class="btn" type="button">Замовити послугу</button>
+        <div class="backdrop is-hidden data-modal">
+          <div class="modal">
+<button data-modal-close class="close-btn">
+  <a class="modal-close" 
+              href=""
+              target="_blank"
+              rel="noopener noreferrer">
+  <svg class="modal-icon" width="18" height="18">
+    <use href="./images/close.svg#close"></use>
+  </svg>
+</a>
+</button>
+          </div>
+      </div>
      </section>
       <section class="section-feature">
         <div class="container">
