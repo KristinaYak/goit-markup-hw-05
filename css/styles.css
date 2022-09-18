@@ -18,6 +18,7 @@
   --light-bg-cl: #f5f4fa;
 
   /*Others*/
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Custom styles*/
@@ -87,6 +88,7 @@
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
+  
 }
 .contact-link {
   padding-top: 32px;
@@ -95,12 +97,14 @@
 
 .list-item-list {
   position: relative;
+  
+  
 }
 
 .menu-link::after {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -110,6 +114,8 @@
   height: 4px;
   background-color: var(--accent-txt-cl);
   border-radius: 2px;
+
+  
 }
 .menu-link:hover::after {
   opacity: 1;
@@ -127,7 +133,7 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden {
-  /*opacity:0;*/
+  opacity:0;
   pointer-events: none;
 }
 .modal {
@@ -147,20 +153,24 @@
 }
 .close-btn {
   position: absolute;
-  top: 0;
- right: 0;
+  top: 8px;
+ right: 8px;
 color: var(--second-txt-cl);
  background: var(--main-bg-cl);
 border: 1px solid rgba(0, 0, 0, 0.1);
-
+cursor: pointer;
+transform: background-color var(--animation);
+}
+.close-btn:hover,
+.close-btn:focus {
+background-color: var(--accent-bg-cl);
 }
 
 .modal-close {
   display: flex;
   width: 30px;
   height: 30px;
-  margin-top: 8px;
-  margin-right: 8px;
+  
   padding: 6px;
   
   background-color: var(--main-bg-cl);
@@ -296,14 +306,21 @@ border: 1px solid rgba(0, 0, 0, 0.1);
 .contacts-icon {
   fill: none;
   fill: var(--light-txt-cl);
+  
+  
+  transition: color var(--animation);
+
 }
 .contacts-icon:hover,
 .contacts-icon:focus {
   color: var(--accent-txt-cl);
+  
 }
 
 .socials-item {
   list-style: none;
+  
+
 }
 .socials-link {
   display: flex;
@@ -313,6 +330,7 @@ border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--main-bg-cl);
   justify-content: center;
   align-items: center;
+  transition: color var(--animation), background-color var(--animation);
 
   border-radius: 50%;
 }
@@ -352,6 +370,7 @@ border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: color var(--animation), border-color var(--animation);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -392,6 +411,7 @@ border: 1px solid rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: background-color var(--animation);
 }
 .socials-link-icon:hover,
 .socials-link-icon:focus {
@@ -426,15 +446,18 @@ border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--light-txt-cl);
   text-decoration: none;
   fill: currentColor;
+  transition: color var(--animation);
 }
 .link.current {
   color: var(--accent-txt-cl);
+  transition: color var(--animation);
 }
 
 .list-item {
   display: block;
   color: var(--light-txt-cl);
   text-decoration: none;
+  transition: color var(--animation);
 }
 
 .list-item .contact-link:hover,
@@ -526,7 +549,7 @@ border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   border: none;
 
-  background: var(--accent-bg-cl);
+  background-color: var(--accent-bg-cl);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
@@ -536,11 +559,12 @@ border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
   color: var(--main-bg-cl);
+  transition: background-color var(--animation);
 }
 
 .btn:hover,
 .btn:focus {
-  background: var(--secondary-accent-bg-cl);
+  background-color: var(--secondary-accent-bg-cl);
 }
 
 /*sestion Наші особливості*/
@@ -643,6 +667,7 @@ border: 1px solid rgba(0, 0, 0, 0.1);
 
 .footer-link-item {
   color: rgba(255, 255, 255, 0.6);
+  transition: color var(--animation);
 }
 .footer-link-item:hover,
 .footer-link-item:focus {

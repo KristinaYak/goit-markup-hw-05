@@ -17,6 +17,7 @@
   --secondary-light-bg-cl: #f5f4fa;
   --darkgrey-bg-cl: #2f303a;
   /*Others*/
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Custom styles*/
@@ -87,7 +88,7 @@ bottom: 0;
 
 
 position: absolute;
-opacity: 0;
+/*opacity: 0;*/
 transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 width: 100%;
@@ -136,7 +137,9 @@ padding-bottom: 94px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color:var(--light-txt-cl);
 }
-.list-item-group:hover .overlay {
+.link-group:hover .overlay,
+.link-group:focus .overlay {
+
   transform: translateY(0);
 }
 .overlay-desc {
@@ -149,7 +152,7 @@ font-size: 18px;
 line-height: calc(28 / 18);
 letter-spacing: 0.03em;
 
-color:var(--light-txt-cl) 250ms cubic-bezier(0.4, 0, 0.2, 1);
+color:var(--light-txt-cl);
 
 }
 
@@ -254,6 +257,7 @@ align-items: baseline;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
   color: var(--main-txt-cl);
+  transition: color var(--animation);
 }
 .header .link:hover,
 .header .link:focus {
@@ -267,6 +271,7 @@ align-items: baseline;
 .link-item {
   color: var(--lightgrey-txt-cl);
   text-decoration: none;
+  transition: color var(--animation);
 }
 
 .main-link {
@@ -318,6 +323,7 @@ align-items: baseline;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-txt-cl);
+  transition: color var(--animation), backround-color var(--animation), box-schadow var(--animation);
 }
 .btn:hover,
 .btn:focus {
@@ -350,6 +356,7 @@ align-items: baseline;
   .link-group {
     display: block;
     text-decoration: none;
+    transition: box-schadow var(--animation);
   }
   .link-group:hover,
   .link-group:focus {
@@ -412,6 +419,7 @@ align-items: baseline;
 }
 .footer-link-item {
   color: rgba(255, 255, 255, 0.6);
+  transition: color var(--animation);
 }
 .footer-link-item:hover,
 .footer-link-item:focus {
@@ -439,6 +447,7 @@ align-items: baseline;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: background-color var(--animation);
 }
 .socials-link-icon:hover,
 .socials-link-icon:focus {
