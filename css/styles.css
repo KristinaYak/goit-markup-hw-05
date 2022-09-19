@@ -161,10 +161,7 @@ border: 1px solid rgba(0, 0, 0, 0.1);
 cursor: pointer;
 transform: background-color var(--animation);
 }
-.close-btn:hover,
-.close-btn:focus {
-background-color: var(--accent-bg-cl);
-}
+
 
 .modal-close {
   display: flex;
@@ -183,6 +180,10 @@ background-color: var(--accent-bg-cl);
 }
 .modal-icon {
   fill: currentColor;
+}
+.modal-icon:hover,
+modal-icon:focus {
+  color: var(--accent-txt-cl);
 }
 
 /* Main nav Ефективні рішення*/
