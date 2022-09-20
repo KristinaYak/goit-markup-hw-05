@@ -72,7 +72,7 @@
   margin-left: 93px;
   gap: 50px;
 }
-.list-contact {
+.list-contacts {
   margin-left: auto;
 }
 
@@ -88,9 +88,10 @@
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
+  transition: color var(--animation);
   
 }
-.contact-link {
+.contacts-link {
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -101,11 +102,11 @@
   
 }
 
-.menu-link::after {
+.current::after {
   position: absolute;
   left: 0;
   bottom: -1px;
-  opacity: 0;
+ 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   content: "";
@@ -118,7 +119,18 @@
   
 }
 .menu-link:hover::after {
-  opacity: 1;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+ 
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-txt-cl);
+  border-radius: 2px;
 }
 
 /*Модальне вікно*/
@@ -141,6 +153,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: transform var(--animation);
 
   height: 581px;
   width: 528px;
@@ -443,7 +456,7 @@ modal-icon:focus {
 
 /*Menu nav*/
 
-.contact-link.link {
+.contacts-link.link {
   color: var(--light-txt-cl);
   text-decoration: none;
   fill: currentColor;
@@ -461,10 +474,11 @@ modal-icon:focus {
   transition: color var(--animation);
 }
 
-.list-item .contact-link:hover,
-.list-item .contact-link:focus {
+.list-item .contacts-link:hover,
+.list-item .contacts-link:focus {
   color: var(--accent-txt-cl);
 }
+
 
 .header .link:hover,
 .header .link:focus {
@@ -481,8 +495,8 @@ modal-icon:focus {
   color: var(--second-txt-cl);
 }
 
-.main-link.active,
-.link .activ {
+.main-link.current,
+.link .current {
   color: var(--accent-txt-cl);
 }
 
@@ -651,7 +665,7 @@ modal-icon:focus {
   letter-spacing: 0.03em;
   color: var(--main-bg-cl);
 }
-.footer-main.active {
+.footer-main.current {
   color: var(--accent-txt-cl);
 }
 
